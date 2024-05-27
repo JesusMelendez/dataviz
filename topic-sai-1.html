@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./css/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./fontawesome/css/all.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>e-Agropulse | Ingredion</title>
+  </head>
+  <body>
+    <script>
+      if (sessionStorage.getItem("name") == null) {
+          window.location = "login.html";
+      }
+  </script>
+    <!-- top navigation bar -->
+    <nav class="navbar navbar-light bg-light fixed-top">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler mx-3"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#sidebar"
+          aria-controls="offcanvasExample"
+        >
+          <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
+        </button>
+        <a
+          class="navbar-brand me-auto ms-lg-0 ms-3 fw-bold"
+          href="./index.html"
+          >LOGO</a
+        >
+        <a class="navbar-brand fw-bold" href="./index.html">
+         LOGO
+        </a>
+        <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#topNavBar"
+        aria-controls="topNavBar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="topNavBar">
+
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle ms-2"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi bi-person-fill"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+
+                <li>
+                  <a class="dropdown-item" href="./login.html">sign out</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- top navigation bar -->
+    <!-- offcanvas -->
+    <div
+      class="offcanvas offcanvas-start sidebar-nav bg-light"
+      tabindex="-1"
+      id="sidebar"
+    >
+      <div class="offcanvas-body p-0">
+     
+        <nav class="navbar-light">
+          <ul class="navbar-nav">
+            <li>
+              <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
+                Menu
+              </div>
+            </li>
+            <li>
+              <a href="./summary.html" class="nav-link px-3 active">
+
+                <span class="me-2"><i class="bi bi-house"></i></span>
+                <span>Overview</span>
+              </a>
+          </li>
+            <li>
+              <a href="./index.html" class="nav-link px-3">
+                <span class="me-2"><i class="fas fa-draw-polygon"></i></span>
+                <span>Plots</span>
+              </a>
+            </li>
+            <li>
+              <a href="./FSA.pdf"  download="FSA.pdf" class="nav-link px-3">
+                <span class="me-2"><i class="fas fa-file-download"></i></span>
+                <span>FSA</span>
+              </a>
+            </li>
+            <li class="my-4"><hr class="dropdown-divider bg-dark" /></li>
+            <li>
+              <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
+                Data monitoring
+              </div>
+            </li>
+
+            <li>
+              <a href="./actividades.html" class="nav-link px-3">
+                <span class="me-2"><i class="fas fa-tasks"></i></span>
+                <span>SAI</span>
+              </a>
+            </li>
+            <li class="my-4"><hr class="dropdown-divider bg-dark" /></li>
+            <li>
+              <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
+                SAI Topics
+              </div>
+            </li>
+            <li class="active">
+              <a href="./topic-sai-1.html" class="nav-link px-3">
+                <span class="me-2 material-icons">nature_people</span>
+                    <span>Community and management in the farming operation</span>
+              </a>
+            </li>
+          
+            <li>
+              <a href="./topic-sai-2.html" class="nav-link px-3">
+                    <span class="me-2 material-icons">soap</span>
+                    <span>Plant material selection and multiplication</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="./topic-sai-3.html" class="nav-link px-3">
+                    <span class="me-2 material-icons">compost</span>
+                    <span>Land Management</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="./topic-sai-4.html" class="nav-link px-3">
+                <span class="me-2 material-icons">task_alt</span>
+                    <span>Nutrient Management</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="./topic-sai-5.html" class="nav-link px-3">
+                <span class="me-2 material-icons">bug_report</span>
+                    <span>Crop Protection & Integrated Pest Management</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="./topic-sai-6.html" class="nav-link px-3">
+                <span class="me-2 material-icons">water_drop</span>
+                    <span>Water Management</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="./topic-sai-7.html" class="nav-link px-3">
+                <span class="me-2 material-icons">co2</span>
+                    <span>Air quality and emissions</span>
+              </a>
+            </li>
+
+
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- offcanvas-->
+
+    <main class="mt-5 pt-3">
+
+      <div class="container-fluid">
+        <div class="row pt-10 pb-21 prep-suelo-banner">
+          <div class="col-md-12">
+            <h4>Community and management in the farming operation</h4>
+          </div>
+          
+        </div>
+        <!-- test -->
+        <!-- ticker -->
+
+        <div class="row justify-content-center ticker-container">
+          <div class="col-lg-12">
+          
+              <ul id="ticker-list">
+ 
+                  <li>Proportion Farmers <span id="proporcion_ciclo"></span></li>
+                  <li>Cropland <span id="total_superfi"></span> (ha)</li>
+                  <li>Yield <span id="rendimiento_aa"></span> (ton/ha)</li>
+                  <li>Income per hectar $<span id="cifra_ingreso_aa"></span> MXN</li>
+                  <li>Income per ton $<span id="cifra_ingreso_ton_aa"></span> MXN</li>
+                  <li>Cost per hectar $<span id="cifra_costo_aa"></span> MXN</li>
+                  <li>Cost per ton $<span id="cifra_costo_ton_aa"></span> MXN</li>
+                  <li>Profit per hectar $<span id="cifra_utilidad_aa"></span> MXN</li>
+                  <li>Profit per ton $<span id="cifra_utilidad_ton_aa"></span> MXN</li>
+                  <li>Cycle</li>
+                  <li>Spring-Summer 2023</li>
+
+              </ul>
+            
+          </div>
+
+        </div>
+        <!-- <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="select_ticker">
+
+        </select> -->
+         <!-- /test -->
+        <div class="row flex-container pb-4 pt-5 mx-1">
+          <div class="col-md-3 col-sm-12 pt-2 align-self-start">
+            <h5 class="text-left pb-2">Participating Farmers</h5>
+
+
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="select_producMun">
+
+            </select>
+              <div id="instructions" class="text-align-left h4 pt-4 lh-sm">
+                <p class="method-kpi">
+                  Count of unique farmers with logbook registered in the system.
+                </p>  
+              </div>
+          </div>
+          <div class="col-md-9 col-sm-12 pt-2 align-self-start">
+            <div id="producMun"></div>
+          </div>
+        </div>
+        <div class="row flex-container pb-2 pt-5 mx-1">
+          <div class="col-md-3 col-sm-12 pt-2 align-self-start">
+            <h5 class="text-left pb-2">Infrastructure (Cropland ha)</h5>
+
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="infra-select">
+
+            </select>
+              <div  class="text-align-left h4 pt-4 lh-sm">
+                <p class="method-kpi">
+                  Sum of cropland area by log type.
+                </p>  
+              </div>
+          </div>
+          <div class="col-md-9 col-sm-12 pt-2 align-self-start">
+            <div id="numParcela"></div>
+          </div>
+        </div>
+        <div class="row flex-container pb-2 pt-5 mx-1">
+          <div class="col-md-3 col-sm-12 pt-2 align-self-start">
+            <h5 class="text-left pb-2">Area applying agricultural innovations (ha)
+              <span class="badge rounded-pill bg-warning text-dark" type="button" data-bs-toggle="tooltip" data-bs-placement="top" >FSA11</span>
+            </h5>
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="select_hectaMun">
+
+            </select>
+              <div id="instructions" class="text-align-left h4 pt-4 lh-sm">
+                <p class="method-kpi">
+                  Total comparative plot area, extension areas and impact areas implementing technological innovations.
+                </p>  
+              </div>
+          </div>
+          <div class="col-md-9 col-sm-12 pt-2 align-self-start">
+            <div id="hectaMunicipio"></div>
+          </div>
+        </div>
+        <div class="row flex-container pb-2 pt-5 mx-1">
+          <div class="col-md-3 col-sm-12 pt-2 align-self-start">
+            <h5 class="text-left pb-2">Conservation Agriculture Area
+              <span class="badge rounded-pill bg-warning text-dark" data-bs-toggle="tooltip" data-bs-placement="top">FSA11</span>
+            </h5>
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="cicloEleccionHaInno">
+
+            </select>
+              <div  class="text-align-left h4 pt-4 lh-sm">
+                <p class="method-kpi">
+                  Area implementing some of the principles of conservation agriculture.
+                </p>  
+              </div>
+          </div>
+          <div class="col-md-9 col-sm-12 pt-2 align-self-start">
+              <div id="labranza"></div>
+          </div>
+        </div>
+        <div class="row flex-container pb-2 pt-5 mx-1">
+          <div class="col-md-3 col-sm-12 pt-2 align-self-start">
+            <h5 class="text-left pb-2">Sowing dates
+
+            </h5>
+
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="select_siembra">
+
+            </select>
+              <div  class="text-align-left h4 pt-4 lh-sm">
+
+              </div>
+
+          </div>
+          <div class="col-md-9 col-sm-12 pt-2 align-self-start">
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <div class="mx-2" id="serieActividades"></div>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="mx-2" id="siembraHa"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row flex-container pb-2 pt-5 mx-1">
+          <div class="col-md-3 col-sm-12 pt-2 align-self-start">
+            <h5 class="text-left pb-2">Harvest dates
+       
+            </h5>
+
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="select_cosecha">
+
+            </select>
+              <div  class="text-align-left h4 pt-4 lh-sm">
+
+              </div>
+
+          </div>
+          <div class="col-md-9 col-sm-12 pt-2 align-self-start">
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <div class="mx-2" id="cosechaActividades"></div>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="mx-2" id="cosechaHa"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row flex-container pb-2 pt-5 mx-1">
+          <div class="col-md-3 col-sm-12 pt-2 align-self-start">
+            <h5 class="text-left pb-2">Yield per hectare
+              <span class="badge rounded-pill bg-warning text-dark" data-bs-toggle="tooltip" data-bs-placement="top">FSA12</span>
+            </h5>
+
+
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="select_rendimiento">
+
+            </select>
+            <div class="form-check form-switch pt-4">
+              <input class="form-check-input" type="checkbox" role="switch" id="swith_rendimiento">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Benchmark</label>
+            </div>
+              <div id="instructions" class="text-align-left h4 pt-4 lh-sm">
+                <p class="method-kpi">
+                  Average yield (ton/ha)
+                </p>  
+              </div>
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="bech_select_rendimiento" disabled>
+                <option selected>Only bechmark active</option>
+              </select>
+          </div>
+          <div class="col-md-9 col-sm-12 pt-2 align-self-start">
+            <div id="rendimientoVP"></div>
+
+
+          </div>
+        </div>
+        <div class="row flex-container pb-2 pt-5 mx-1">
+          <div class="col-md-3 col-sm-12 pt-2 align-self-start">
+            <h5 class="text-left pb-2">Income per hectare
+              <span class="badge rounded-pill bg-warning text-dark" data-bs-toggle="tooltip" data-bs-placement="top">FSA12</span>
+            </h5>
+
+
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="select_ingreso_ha">
+
+            </select>
+            <div class="form-check form-switch pt-4">
+              <input class="form-check-input" type="checkbox" role="switch" id="swith_ingreso_ha">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Benchmark</label>
+            </div>
+              <div id="instructions" class="text-align-left h4 pt-4 lh-sm">
+                <p class="method-kpi">
+                Income per hectare  (MXN/ha) is calculated from the average yield per hectare by the sales price (MXN/ton). </p>  
+              </div>
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="bech_select_ingreso_ha" disabled>
+                <option selected>Only bechmark active</option>
+              </select>
+          </div>
+          <div class="col-md-9 col-sm-12 pt-2 align-self-start">
+            <div id="CTVP2"></div>
+          </div>
+        </div>
+        <div class="row flex-container pb-2 pt-5 mx-1">
+          <div class="col-md-3 col-sm-12 pt-2 align-self-start">
+            <h5 class="text-left pb-2"> Income per ton
+              <span class="badge rounded-pill bg-warning text-dark" data-bs-toggle="tooltip" data-bs-placement="top">FSA12</span>
+            </h5>
+
+
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="select_ingreso_ton">
+
+            </select>
+            <div class="form-check form-switch pt-4">
+              <input class="form-check-input" type="checkbox" role="switch" id="swith_ingreso_ton">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Benchmark</label>
+            </div>
+              <div id="instructions" class="text-align-left h4 pt-4 lh-sm">
+                <p class="method-kpi">
+                  Income per ton (MXN/ton) is the result of Income per hectare (MXN/ha) divided by Yield per hectare (ton/ha).</p>
+                   <p class="method-kpi">
+                </p>  
+              </div>
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="bech_select_ingreso_ton" disabled>
+                <option selected>Only bechmark active</option>
+              </select>
+          </div>
+          <div class="col-md-9 col-sm-12 pt-2 align-self-start">
+            <div id="CTVP"></div>
+
+
+          </div>
+        </div>
+        <div class="row flex-container pb-2 pt-5 mx-1">
+          <div class="col-md-3 col-sm-12 pt-2 align-self-start">
+            <h5 class="text-left pb-2"> Cost per hectare
+              <span class="badge rounded-pill bg-warning text-dark" data-bs-toggle="tooltip" data-bs-placement="top">FSA12</span>
+            </h5>
+
+
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="select_costo_ha">
+
+            </select>
+            <div class="form-check form-switch pt-4">
+              <input class="form-check-input" type="checkbox" role="switch" id="swith_costo_ha">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Benchmark</label>
+            </div>
+              <div id="instructions" class="text-align-left h4 pt-4 lh-sm">
+                <p class="method-kpi">
+                  Average costs (MXN/ha).
+                </p>  
+              </div>
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="bech_select_costo_ha" disabled>
+                <option selected>Only bechmark active</option>
+              </select>
+          </div>
+          <div class="col-md-9 col-sm-12 pt-2 align-self-start">
+            <div id="IRVP2"></div>
+
+
+          </div>
+        </div>
+        <div class="row flex-container pb-2 pt-5 mx-1">
+          <div class="col-md-3 col-sm-12 pt-2 align-self-start">
+            <h5 class="text-left pb-2"> Cost per ton
+              <span class="badge rounded-pill bg-warning text-dark" data-bs-toggle="tooltip" data-bs-placement="top">FSA12</span>
+            </h5>
+
+
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="select_costo_ton">
+
+            </select>
+            <div class="form-check form-switch pt-4">
+              <input class="form-check-input" type="checkbox" role="switch" id="swith_costo_ton">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Benchmark</label>
+            </div>
+              <div id="instructions" class="text-align-left h4 pt-4 lh-sm">
+                <p class="method-kpi">
+                  Where Cost per ton (MXN/ton) equals: Cost per hectare (MXN/ha) divided by Yield (ton/ha).
+                </p>  
+              </div>
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="bech_select_costo_ton" disabled>
+                <option selected>Only bechmark active</option>
+              </select>
+          </div>
+          <div class="col-md-9 col-sm-12 pt-2 align-self-start">
+            <div id="IRVP"></div>
+
+          </div>
+        </div>
+        <div class="row flex-container pb-2 pt-5 mx-1">
+          <div class="col-md-3 col-sm-12 pt-2 align-self-start">
+            <h5 class="text-left pb-2"> Profit per hectare
+              <span class="badge rounded-pill bg-warning text-dark" data-bs-toggle="tooltip" data-bs-placement="top">FSA12</span>
+            </h5>
+
+
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="select_utilidad_ha">
+
+            </select>
+            <div class="form-check form-switch pt-4">
+              <input class="form-check-input" type="checkbox" role="switch" id="swith_utilidad_ha">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Benchmark</label>
+            </div>
+              <div id="instructions" class="text-align-left h4 pt-4 lh-sm">
+                <p class="method-kpi">
+                  Profit per hectare (MXN/ha) is equal to: income per hectare (MXN/ha) minus Costs per hectare (MXN/ha).
+                </p>  
+              </div>
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="bech_select_utilidad_ha" disabled>
+                <option selected>Only bechmark active</option>
+              </select>
+          </div>
+          <div class="col-md-9 col-sm-12 pt-2 align-self-start">
+            <div id="UTVP2"></div>
+
+
+          </div>
+        </div>
+        <div class="row flex-container pb-2 pt-5 mx-1">
+          <div class="col-md-3 col-sm-12 pt-2 align-self-start">
+            <h5 class="text-left pb-2"> Profit per ton
+              <span class="badge rounded-pill bg-warning text-dark" data-bs-toggle="tooltip" data-bs-placement="top">FSA12</span>
+            </h5>
+
+
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="select_utilidad_ton">
+
+            </select>
+            <div class="form-check form-switch pt-4">
+              <input class="form-check-input" type="checkbox" role="switch" id="swith_utilidad_ton">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Benchmark</label>
+            </div>
+              <div id="instructions" class="text-align-left h4 pt-4 lh-sm">
+                <p class="method-kpi">
+                  Average profit (MXN/ton) 
+                </p>  
+              </div>
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="bech_select_utilidad_ton" disabled>
+                <option selected>Only bechmark active</option>
+              </select>
+          </div>
+          <div class="col-md-9 col-sm-12 pt-2 align-self-start">
+            <div id="UTVP"></div>
+
+            </div>
+
+
+        </div>
+        <div class="row flex-container pb-2 pt-5 mx-1">
+          <div class="col-md-3 col-sm-12 pt-2 align-self-start">
+            <h5 class="text-left pb-2">Farmer training
+              <span class="badge rounded-pill bg-warning text-dark" data-bs-toggle="tooltip" data-bs-placement="top">FSA15</span>
+              <span class="badge rounded-pill bg-warning text-dark" data-bs-toggle="tooltip" data-bs-placement="top">FSA16</span>
+              <span class="badge rounded-pill bg-warning text-dark" data-bs-toggle="tooltip" data-bs-placement="top">FSA19</span>
+            </h5>
+
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="select_capacitacion">
+
+            </select>
+              <div  class="text-align-left h4 pt-4 lh-sm">
+                <p class="method-kpi">Number of farmers and key stakeholders attending events to promote agricultural practices related to community and farm operation management.
+                </p>
+              </div>
+
+          </div>
+          <div class="col-md-9 col-sm-12 pt-2 align-self-start">
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <div class="mx-2" id="PEG"></div>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="mx-2" id="PER"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </main>
+
+    <!-- Container fluid -->
+
+
+
+    <script src="//cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="//cdn.amcharts.com/lib/4/charts.js"></script>
+    <script src="//cdn.amcharts.com/lib/4/plugins/wordCloud.js"></script>
+    <script src="//cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
+    <script src="./js/plotly-2.3.0.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-locale-es-latest.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script src="./js/jquery.dataTables.min.js"></script>
+    <script src="./js/dataTables.bootstrap5.min.js"></script>
+    <script src="./js/script.js"></script>
+    <!-- <script src="./js/topic1.js"></script> -->
+
+    <script src="./js/fsa.js"></script>
+
+    <script src="./js/t1.js"></script>
+
+
+
+
+
+
+    <script type="text/javascript" src="./js/manejodesesiones.js" charset="ISO-8859-1"></script>
+
+  </body>
+</html>
+<script>
+
+  </script>

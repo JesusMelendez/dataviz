@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./css/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.21/esri/themes/light/main.css">
+    <title>e-Agropulse | Ingredion</title>
+  </head>
+  <body>
+
+    <script>
+      if (sessionStorage.getItem("name") == null) {
+          window.location = "login.html";
+      }
+  </script>
+    <!-- top navigation bar -->
+    <!-- top navigation bar -->
+    <nav class="navbar navbar-light bg-light fixed-top">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler mx-3"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#sidebar"
+          aria-controls="offcanvasExample"
+        >
+          <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
+        </button>
+        <a
+          class="navbar-brand me-auto ms-lg-0 ms-3 fw-bold"
+          href="./index.html"
+          >LOGO</a>
+          <a class="navbar-brand fw-bold" href="./index.html">
+         LOGO 
+          </a>
+          <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#topNavBar"
+          aria-controls="topNavBar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+          <div class="collapse navbar-collapse" id="topNavBar">
+
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle ms-2"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="bi bi-person-fill"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+  
+                  <li>
+                    <a class="dropdown-item" href="./login.html">sign out</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+      </div>
+    </nav>
+    <!-- top navigation bar -->
+    <!-- offcanvas -->
+    <div
+      class="offcanvas offcanvas-start sidebar-nav bg-light"
+      tabindex="-1"
+      id="sidebar"
+    >
+      <div class="offcanvas-body p-0">
+        <nav class="navbar-light">
+          <ul class="navbar-nav">
+            <li>
+              <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
+                Menu
+              </div>
+            </li>
+            <li class="active">
+                <a href="./summary.html" class="nav-link px-3 active">
+  
+                  <span class="me-2"><i class="bi bi-house"></i></span>
+                  <span>Overview</span>
+                </a>
+            </li>
+            <li>
+              <a href="./index.html" class="nav-link px-3">
+                <span class="me-2"><i class="fas fa-draw-polygon"></i></span>
+                <span>Plots</span>
+              </a>
+            </li>
+            <li>
+              <a href="./FSA.pdf"  download="FSA.pdf" class="nav-link px-3">
+                <span class="me-2"><i class="fas fa-file-download"></i></span>
+                <span>FSA</span>
+              </a>
+            </li>
+            <li class="my-4"><hr class="dropdown-divider bg-dark" /></li>
+            <li>
+              <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
+                Data monitoring
+              </div>
+            </li>
+            <li>
+              <a href="./actividades.html" class="nav-link px-3">
+                <span class="me-2"><i class="fas fa-tasks"></i></span>
+                <span>SAI</span>
+              </a>
+            </li>
+
+
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+
+
+    <!-- offcanvas-->
+    <main class="mt-5 pt-3">
+
+      <div class="container-fluid">
+        <div class="row bg-cimmyt pt-10 pb-21">
+          <div class="col-md-12">
+            <h4>Ingredion - Originación Sustentable de Maíz Amarillo en Jalisco y Sinaloa</h4>
+          </div>
+        </div>
+
+
+        <div class="modal fade" id="ciclo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Reporting Period</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body text-center">
+                Cumulative information
+                <p>Consider the Spring-Summer and Autumn-Winter cycles.</p>
+                <p>Updated to Spring-Summer 2023</p>
+              </div>
+            </div>
+          </div>
+      </div>
+
+        <div class="d-flex flex-row flex-wrap pt-5 ms-2">
+
+            <div class="row container-fluid  pt-4 pb-2">
+              
+              <div class="col-md-4 col-xs-12">
+                <div class="kpi-container-red">
+                  <h4 class="kpi-red">Participating</h4>
+                  <span  id="productores" class="number-kpi-red counter-count"></span>
+                  <p class="kpi-red">Farmers</p>
+                </div>
+              </div>
+              <div class="col-md-4 col-xs-12">
+                <div class="kpi-container-green">
+                  <h4 class="kpi-green">Surface area (ha)</h4>
+                  <span id="hectareas" class="number-kpi-green counter-count"></span>
+                  <p class="kpi-green">Applying Agricultural Innovations</p>
+                </div>
+              </div>
+              <div class="col-md-4 col-xs-12">
+                <div class="kpi-container-green">
+                  <h4 class="kpi-green">Surface area (ha)</h4>
+                  <span id="AC_ha" class="number-kpi-green counter-count"></span>
+                  <p class="kpi-green">Applying Conservation Agriculture</p>
+                </div>
+              </div>
+
+            </div>
+            <div class="row container-fluid  pt-4 pb-2">
+              
+
+                <div class="col-md-4 col-xs-12">
+                    <div class="kpi-container-red">
+                      <h4 class="kpi-red">Attendees</h4>
+                      <span id="asistentes" class="number-kpi-red counter-count"></span>
+                      <p class="kpi-red">in the different topics for the promotion of sustainable agriculture</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                  <div class="kpi-container">
+                    <h4 class="kpi">Grain Produced (Tons)</h4>
+                    <span id="eventos" class="number-kpi-no counter-count">16037</span>
+                    <p class="kpi">Spring-Summer</p>
+                  </div>
+              </div>
+              <div class="col-md-4 col-xs-12">
+                <div class="kpi-container">
+                  <h4 class="kpi">Grain Produced (Tons)</h4>
+                  <span id="eventos" class="number-kpi-no counter-count">32114</span>
+                  <p class="kpi">Autumn-Winter</p>
+                </div>
+            </div>
+
+            </div>
+
+
+        </div>
+
+      </div>
+    </main>
+
+
+    <!-- Container fluid -->
+
+
+  
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script src="./js/jquery.dataTables.min.js"></script>
+    <script src="./js/dataTables.bootstrap5.min.js"></script>
+    <script>
+      $(document).ready(function(){
+          $('#ciclo').modal('show')
+      })
+  </script>
+    <script src="./js/overview.js"></script>
+    <script type="text/javascript" src="./js/manejodesesiones.js" charset="ISO-8859-1"></script>
+  </body>
+</html>
